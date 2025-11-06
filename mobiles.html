@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mobiles - Portal</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="top-banner">
+    <div class="container banner-section flex">
+      <div class="hadding"><h1>Mobiles</h1></div>
+      <div class="hadder-section flex">
+        <div class="anchar-tag flex">
+          <li><a href="#" class="nav-toggle hover-link" id="navtoggle"><i class="fa-solid fa-bars"></i></a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="container navbar flex" id="navbar">
+      <li><a href="index.html" class="hover-link">Home</a></li>
+      <li><a href="online-shopping.html" class="hover-link">Online Shopping</a></li>
+      <li><a href="sell.html" class="hover-link">Sell</a></li>
+      <li><a href="mobiles.html" class="hover-link active">Mobiles</a></li>
+      <li><a href="new-releases.html" class="hover-link">New Releases</a></li>
+      <li><a href="online-pay.html" class="hover-link">Online Pay</a></li>
+      <li><a href="cart.html" class="hover-link"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <main class="product-section">
+    <div class="container product">
+      <div class="hadder"><h3>Top Mobiles</h3></div>
+
+      <div class="product-image flex">
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/61xNG4wjOuL._AC_SY200_.jpg" alt="Phone 1">
+          <h4>Redmi Note 12</h4>
+          <p>₹14,999</p>
+          <button class="primary-button add-to-cart"
+                  data-name="Redmi Note 12"
+                  data-price="14999"
+                  data-img="https://m.media-amazon.com/images/I/61xNG4wjOuL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/71Zf9uUp+GL._AC_SY200_.jpg" alt="Phone 2">
+          <h4>Samsung M14</h4>
+          <p>₹19,499</p>
+          <button class="primary-button add-to-cart"
+                  data-name="Samsung M14"
+                  data-price="19499"
+                  data-img="https://m.media-amazon.com/images/I/71Zf9uUp+GL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/61lfthIflfL._AC_SY200_.jpg" alt="Phone 3">
+          <h4>Realme C53</h4>
+          <p>₹9,999</p>
+          <button class="primary-button add-to-cart"
+                  data-name="Realme C53"
+                  data-price="9999"
+                  data-img="https://m.media-amazon.com/images/I/61lfthIflfL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Back -->
+  <div class="section-back">
+    <div class="container">
+      <a href="index.html" class="hover-link secondary-button">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Add to Cart System
+    const cartButtons = document.querySelectorAll('.add-to-cart');
+
+    cartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const name = button.getAttribute('data-name');
+        const price = parseInt(button.getAttribute('data-price'));
+        const img = button.getAttribute('data-img');
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Check if already in cart
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name, price, img, qty: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert(`${name} added to cart successfully! 🛒`);
+      });
+    });
+  </script>
+</body>
+</html>
