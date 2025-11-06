@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Shopping | Buy Products</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+</head>
+<body>
+  <div class="top-banner">
+    <div class="container banner-section flex">
+      <div class="hadding"><h1>Online Shopping</h1></div>
+    </div>
+  </div>
+
+  <div class="product-section">
+    <div class="container product">
+      <div class="hadder"><h3>Available Products</h3></div>
+      <div class="product-image flex">
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41L1Fw2xgOL._AC_SY200_.jpg" alt="Tablet" />
+          <h4>Samsung Tablet</h4>
+          <p class="price">₹12,999</p>
+          <button class="primary-button buy-btn">Buy Now</button>
+          <button class="primary-button cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41xNB9WGLDL._AC_SY200_.jpg" alt="Watch" />
+          <h4>Titan Smart Watch</h4>
+          <p class="price">₹4,499</p>
+          <button class="primary-button buy-btn">Buy Now</button>
+          <button class="primary-button cart-btn">Add to Cart</button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41sx753+kXL._AC_SY200_.jpg" alt="Bulb" />
+          <h4>Smart Bulb (Pack of 2)</h4>
+          <p class="price">₹899</p>
+          <button class="primary-button buy-btn">Buy Now</button>
+          <button class="primary-button cart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container footer-section flex">
+      <div class="footer-hadding flex">
+        <h3>Customer Service</h3>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Track Orders</a></li>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.buy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('✅ Order placed successfully! Thank you for shopping with us.');
+      });
+    });
+
+    document.querySelectorAll('.cart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('🛒 Item added to your cart!');
+      });
+    });
+  </script>
+</body>
+</html>
