@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Shopping Portal | Home</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+
+<body>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    <div class="container banner-section flex">
+      <div class="hadding">
+        <h1>Online Shopping Portal</h1>
+      </div>
+
+      <div class="hadder-section flex">
+        <div class="search flex">
+          <label for="search">Search</label>
+          <input type="text" placeholder="Search products..." required />
+        </div>
+
+        <!-- 🛒 Cart icon added -->
+        <a href="cart.html" class="cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+
+        <div class="anchar-tag flex">
+          <li>
+            <a href="#" class="nav-toggle hover-link" id="navtoggle">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="container navbar flex" id="navbar">
+      <li><a href="index.html" class="hover-link">Home</a></li>
+      <li><a href="online-shopping.html" class="hover-link">Online Shopping</a></li>
+      <li><a href="sell.html" class="hover-link">Sell</a></li>
+      <li><a href="mobiles.html" class="hover-link">Mobiles</a></li>
+      <li><a href="new-releases.html" class="hover-link">New Releases</a></li>
+      <li><a href="online-pay.html" class="hover-link">Online Pay</a></li>
+      <li><a href="#" class="hover-link">Sign in</a></li>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner flex">
+    <div class="container container-image flex">
+      <img
+        src="banner1.jpg"
+        alt="Banner"
+      />
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="product-section">
+    <div class="container product">
+      <div class="hadder">
+        <h3>Today's Deals</h3>
+      </div>
+      <div class="product-image flex">
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41L1Fw2xgOL._AC_SY200_.jpg" alt="" />
+          <h4>Samsung Tablet</h4>
+          <p class="price">₹12,999</p>
+          <button class="add-to-cart"
+                  data-name="Samsung Tablet"
+                  data-price="12999"
+                  data-img="https://m.media-amazon.com/images/I/41L1Fw2xgOL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41xNB9WGLDL._AC_SY200_.jpg" alt="" />
+          <h4>Titan Smart Watch</h4>
+          <p class="price">₹4,499</p>
+          <button class="add-to-cart"
+                  data-name="Titan Smart Watch"
+                  data-price="4499"
+                  data-img="https://m.media-amazon.com/images/I/41xNB9WGLDL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41sx753+kXL._AC_SY200_.jpg" alt="" />
+          <h4>Smart Bulb (Pack of 2)</h4>
+          <p class="price">₹899</p>
+          <button class="add-to-cart"
+                  data-name="Smart Bulb (Pack of 2)"
+                  data-price="899"
+                  data-img="https://m.media-amazon.com/images/I/41sx753+kXL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/B13hpNw5K6L._AC_SY200_.png" alt="" />
+          <h4>Door Lock Set</h4>
+          <p class="price">₹1,299</p>
+          <button class="add-to-cart"
+                  data-name="Door Lock Set"
+                  data-price="1299"
+                  data-img="https://m.media-amazon.com/images/I/B13hpNw5K6L._AC_SY200_.png">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/41QOpnWKj-L._AC_SY200_.jpg" alt="" />
+          <h4>Water Purifier</h4>
+          <p class="price">₹7,499</p>
+          <button class="add-to-cart"
+                  data-name="Water Purifier"
+                  data-price="7499"
+                  data-img="https://m.media-amazon.com/images/I/41QOpnWKj-L._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container footer-section flex">
+      <div class="footer-hadding flex">
+        <h3>Get to Know Us</h3>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Careers</a></li>
+      </div>
+
+      <div class="footer-hadding flex">
+        <h3>Connect with Us</h3>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+      </div>
+
+      <div class="footer-hadding flex">
+        <h3>Make Money with Us</h3>
+        <li><a href="#">Sell on Portal</a></li>
+      </div>
+
+      <div class="footer-hadding flex">
+        <h3>Help</h3>
+        <li><a href="#">Your Account</a></li>
+        <li><a href="#">Returns</a></li>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
