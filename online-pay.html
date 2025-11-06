@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Pay - Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+  <link rel="stylesheet" href="index.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    .pay-box { max-width:720px; margin:20px auto; background:#fff; padding:20px; border-radius:10px; }
+    .pay-box label{ display:block; margin:8px 0 6px; }
+    .pay-box input, .pay-box select { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    .pay-actions { margin-top:12px; }
+  </style>
+</head>
+<body>
+  <div class="top-banner">
+    <div class="container banner-section flex"><div class="hadding"><h1>Online Pay</h1></div>
+      <div class="hadder-section flex">
+        <div class="anchar-tag flex">
+          <li><a href="#" class="nav-toggle hover-link" id="navtoggle"><i class="fa-solid fa-bars"></i></a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="container navbar flex" id="navbar">
+      <li><a href="index.html" class="hover-link">Home</a></li>
+      <li><a href="online-shopping.html" class="hover-link">Online Shopping</a></li>
+      <li><a href="sell.html" class="hover-link">Sell</a></li>
+      <li><a href="mobiles.html" class="hover-link">Mobiles</a></li>
+      <li><a href="electronics.html" class="hover-link">Electronics</a></li>
+      <li><a href="new-releases.html" class="hover-link">New Releases</a></li>
+      <li><a href="online-pay.html" class="hover-link">Online Pay</a></li>
+    </div>
+  </div>
+
+  <main style="padding:28px 0;">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:12px;">Make a Payment (Demo)</h2>
+
+      <div class="pay-box">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" min="1" placeholder="Enter amount" />
+
+        <label for="method">Payment Method</label>
+        <select id="method">
+          <option>UPI</option>
+          <option>Credit/Debit Card</option>
+          <option>Netbanking</option>
+          <option>Wallet</option>
+        </select>
+
+        <label for="details">Payment Details (e.g., UPI ID or Card last 4 digits)</label>
+        <input id="details" type="text" placeholder="example@upi or 1234" />
+
+        <div class="pay-actions">
+          <button class="btn-submit" onclick="payDemo()">Proceed to Pay (Demo)</button>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:#666; margin-top:12px;">
+        * Demo only — integrate real payment gateway (Razorpay/Paytm/Stripe) for production.
+      </p>
+    </div>
+  </main>
+
+  <div class="section-back">
+    <div class="container"><a href="index.html" class="hover-link secondary-button">Back to Home</a></div>
+  </div>
+
+  <script>
+    function payDemo(){
+      const amt = document.getElementById('amount').value;
+      const method = document.getElementById('method').value;
+      const details = document.getElementById('details').value;
+      if(!amt || amt <= 0){
+        alert('Please enter a valid amount');
+        return;
+      }
+      alert('Demo Payment:\\nAmount: ' + amt + '\\nMethod: ' + method + '\\nDetails: ' + details + '\\n\\n(Integrate payment gateway for real payments.)');
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
