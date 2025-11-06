@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>New Releases - Portal</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="top-banner">
+    <div class="container banner-section flex">
+      <div class="hadding"><h1>New Releases</h1></div>
+      <div class="hadder-section flex">
+        <div class="anchar-tag flex">
+          <li>
+            <a href="#" class="nav-toggle hover-link" id="navtoggle">
+              <i class="fa-solid fa-bars"></i>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="container navbar flex" id="navbar">
+      <li><a href="index.html" class="hover-link">Home</a></li>
+      <li><a href="online-shopping.html" class="hover-link">Online Shopping</a></li>
+      <li><a href="sell.html" class="hover-link">Sell</a></li>
+      <li><a href="mobiles.html" class="hover-link">Mobiles</a></li>
+      <li><a href="new-releases.html" class="hover-link active">New Releases</a></li>
+      <li><a href="online-pay.html" class="hover-link">Online Pay</a></li>
+      <li>
+        <a href="cart.html" class="hover-link cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <main class="product-section">
+    <div class="container product">
+      <div class="hadder"><h3>🔥 Just Launched</h3></div>
+
+      <div class="product-image flex">
+
+        <!-- Product 1 -->
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/71okpP8hfhL._AC_SY200_.jpg" alt="Product 1">
+          <h4>Noise ColorFit Pro 4</h4>
+          <p>₹3,499</p>
+          <button class="primary-button add-to-cart"
+                  data-name="Noise ColorFit Pro 4"
+                  data-price="3499"
+                  data-img="https://m.media-amazon.com/images/I/71okpP8hfhL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/81+O5exsulL._AC_SY200_.jpg" alt="Product 2">
+          <h4>boAt Rockerz 255 ANC</h4>
+          <p>₹1,899</p>
+          <button class="primary-button add-to-cart"
+                  data-name="boAt Rockerz 255 ANC"
+                  data-price="1899"
+                  data-img="https://m.media-amazon.com/images/I/81+O5exsulL._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="images">
+          <img src="https://m.media-amazon.com/images/I/81PHDm4ZomS._AC_SY200_.jpg" alt="Product 3">
+          <h4>Echo Dot (5th Gen)</h4>
+          <p>₹4,499</p>
+          <button class="primary-button add-to-cart"
+                  data-name="Echo Dot (5th Gen)"
+                  data-price="4499"
+                  data-img="https://m.media-amazon.com/images/I/81PHDm4ZomS._AC_SY200_.jpg">
+            <i class="fa-solid fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Back Button -->
+  <div class="section-back">
+    <div class="container">
+      <a href="index.html" class="hover-link secondary-button">← Back to Home</a>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // 🛒 Add to Cart Logic (works same as index page)
+    const buttons = document.querySelectorAll('.add-to-cart');
+    const cartCount = document.getElementById('cart-count');
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let totalQty = 0;
+      cart.forEach(item => totalQty += item.qty);
+      cartCount.textContent = totalQty;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const price = parseInt(btn.dataset.price);
+        const img = btn.dataset.img;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name, price, img, qty: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        alert(`${name} added to cart successfully!`);
+      });
+    });
+
+    // Show existing count on page load
+    updateCartCount();
+  </script>
+</body>
+</html>
