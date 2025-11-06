@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sell on Portal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="media-query.css" />
+  <link rel="stylesheet" href="index.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    /* small inline helpers for the sell steps */
+    .steps { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin:20px 0; }
+    .step { background:#fff; padding:16px; border-radius:10px; width:250px; box-shadow:0 3px 8px rgba(0,0,0,0.08); text-align:center; }
+    .seller-form { max-width:760px; margin: 20px auto; background: #fff; padding:18px; border-radius:10px; }
+    .seller-form label { display:block; margin:8px 0 6px; font-weight:600; }
+    .seller-form input, .seller-form textarea, .seller-form select { width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; }
+    .btn-submit { margin-top:12px; display:inline-block; padding:10px 14px; background:brown; color:#fff; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <div class="top-banner">
+    <div class="container banner-section flex">
+      <div class="hadding"><h1>Sell on Portal</h1></div>
+      <div class="hadder-section flex">
+        <div class="anchar-tag flex">
+          <li><a href="#" class="nav-toggle hover-link" id="navtoggle"><i class="fa-solid fa-bars"></i></a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav">
+    <div class="container navbar flex" id="navbar">
+      <li><a href="index.html" class="hover-link">Home</a></li>
+      <li><a href="online-shopping.html" class="hover-link">Online Shopping</a></li>
+      <li><a href="sell.html" class="hover-link">Sell</a></li>
+      <li><a href="mobiles.html" class="hover-link">Mobiles</a></li>
+      <li><a href="new-releases.html" class="hover-link">New Releases</a></li>
+      <li><a href="online-pay.html" class="hover-link">Online Pay</a></li>
+    </div>
+  </div>
+
+  <main style="padding:28px 0;">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:12px;">Sell on Portal — Step-by-step process</h2>
+
+      <div class="steps">
+        <div class="step">
+          <h3>1. Register</h3>
+          <p>Create a seller account with basic business details and KYC documents.</p>
+        </div>
+        <div class="step">
+          <h3>2. List Products</h3>
+          <p>Add product title, description, images, price, stock and category.</p>
+        </div>
+        <div class="step">
+          <h3>3. Verify & Launch</h3>
+          <p>Portal team will verify your account. After verification your listings go live.</p>
+        </div>
+        <div class="step">
+          <h3>4. Receive Orders</h3>
+          <p>Orders come to your seller dashboard. Pack & ship within SLA.</p>
+        </div>
+        <div class="step">
+          <h3>5. Get Paid</h3>
+          <p>Payouts are transferred after returns window and commission deduction.</p>
+        </div>
+      </div>
+
+      <section style="margin-top:20px;">
+        <h3 style="text-align:center">Seller Registration Form (Demo)</h3>
+
+        <form class="seller-form" id="sellerForm" onsubmit="submitSeller(event)">
+          <label for="businessName">Business / Shop Name</label>
+          <input id="businessName" name="businessName" required />
+
+          <label for="ownerName">Owner Name</label>
+          <input id="ownerName" name="ownerName" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required />
+
+          <label for="category">Primary Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select</option>
+            <option>Fashion</option>
+            <option>Electronics</option>
+            <option>Home & Kitchen</option>
+            <option>Grocery</option>
+          </select>
+
+          <label for="about">About your business (short)</label>
+          <textarea id="about" name="about" rows="4"></textarea>
+
+          <button class="btn-submit" type="submit">Submit Registration</button>
+        </form>
+      </section>
+
+      <p style="text-align:center; color:#666; margin-top:16px;">
+        * Ye form demo hai. Backend connect karne par aap data server pe bhej sakte ho (e.g. POST /api/sellers).
+      </p>
+    </div>
+  </main>
+
+  <div class="section-back">
+    <div class="container"><a href="index.html" class="hover-link secondary-button">Back to Home</a></div>
+  </div>
+
+  <script>
+    function submitSeller(e){
+      e.preventDefault();
+      // demo: show captured data
+      const form = document.getElementById('sellerForm');
+      const data = Object.fromEntries(new FormData(form).entries());
+      alert('Registration submitted (demo):\\n' + JSON.stringify(data, null, 2));
+      form.reset();
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
